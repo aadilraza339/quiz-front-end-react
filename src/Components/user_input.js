@@ -48,9 +48,10 @@ class Login extends React.Component {
                         <Question {...this.state}/>
                     </div>
                     <div className='score_card'>
+                        <h3>Top five Gamer</h3>
                       { this.state.persons.map(person => 
                         <div className='user_score'>
-                          <div className='username'>USER NAME {person.user_name}</div>
+                          <div className='username'>GAMER {person.user_name}</div>
                           <div className='wrong'>MISTAKE = {person.wrong}</div>
                           <div className='date'>DATE = {person.Today}</div>
 
