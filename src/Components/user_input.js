@@ -35,31 +35,13 @@ class Login extends React.Component {
         });
     }
     
-    handleSubmit = (e) => {
-        e.preventDefault();
-        const user = {
-
-            username: this.state.username, 
-        }
-
-        Axios.post(`https://aadil-quiz.glitch.me/name`, user).then((res) => {
-
-            //handle your login 
-            console.log(res,'ddd');
-
-        }).catch((e) => {
-
-            //handle your errors
-        });
-
-    }
     render() {
         return (
             <div>
                 <div className='container' >
                     <img  className='note' src={'https://i.pinimg.com/originals/2f/df/a7/2fdfa7989a2d77a1327e45ce5d4447ab.jpg'} alt="BigCo Inc. logo"/>
                     <span className='heading' >Special  Quiz</span>
-                    <form className='form' onSubmit={this.handleSubmit}>
+                    <form className='form'>
                         <input type = "text" onChange={this.handleInputChange} name= "username" placeholder='enter your name' required></input>
                     </form>
                     <div>

@@ -49,7 +49,7 @@ class Question extends React.Component {
     }
 
     handleSubmit = (e) => {
-        const url = 'http://localhost:8000/name';
+        const url = 'https://aadil-quiz.glitch.me/name';
         const newUser = {
             user_name: this.props.username,
             wrong: this.state.wrong,
