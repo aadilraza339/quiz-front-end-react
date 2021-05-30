@@ -1,9 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 body {
     font-family: 'Josefin Sans', cursive;
+    background: url('https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z3JleXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');
+}
+
+.form {
+    border: 2px solid orange;
+    height: 300px;
+    padding-top: 30px;
+}
+.heading {
+    padding-top: 10px;
+}
+.submit {
+    margin-left: 10px;
 }
 .center {
-    /* max-width: 600px; */
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -52,7 +65,26 @@ body {
     justify-content: space-evenly;
     display: flex;
 }
-/*  */
+.user_score {
+
+    border: 2px solid orange;
+    color: black;
+    margin-top: 5px;
+}
+.user_score div {
+    padding: 5px;
+}
+
+@media screen and (max-width: 414px) {
+    .flex {
+      display: block;
+    }
+    .btn{
+        width: 90px;
+    }
+  }
+
+/*  butoon*/
 
 ul {
     padding: 0;

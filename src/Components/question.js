@@ -31,22 +31,21 @@ class Question extends React.Component {
                     else {
                         this.setState({
                             wrong:1,
+                            message:   ("Wrong answer , choose correct option!")
                         })
                     }
                     
                 }
             }
             else {
-                
-                this.handleSubmit()
                 let endmessage = 
                 <div className='text_center'>
                 <h4 className='f_26'> hello  {this.props.username} </h4>
                 <p className='f_26'>you have made {this.state.wrong}<span className='red'> mistake </span></p>
-                <span>Do you want to play again?</span>
-                <ul>
+                <span>Do you want to play continue?</span>
+                <ul className='flex'>
                     <li className="btn" onClick={this.playAgain}><span>Yes</span></li>
-                    <li className="btn" onClick={this.reStart}><span>Restart Game</span></li>
+                    <li className="btn" onClick={this.reStart}><span>End Game</span></li>
                 </ul>
                 </div>
                 this.setState({
@@ -65,12 +64,7 @@ class Question extends React.Component {
         })
     }
     reStart = ()=>{
-        this.setState({
-            hide : true,
-            count: 1,
-            message:'',
-            wrong:1
-        })
+        this.handleSubmit()
     }
     handleSubmit = (e) => {
         const url = 'https://aadil-quiz.glitch.me/name';

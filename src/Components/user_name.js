@@ -17,7 +17,6 @@ class LoginControl extends React.Component {
       questions : shuffle(Question_data),
       isLoggedIn: false,
       persons: [],
-      showStore: true
     };
   }
 
@@ -26,7 +25,11 @@ class LoginControl extends React.Component {
     if(this.state.username){
       this.setState({
         isLoggedIn: true,
-        showStore: ''
+      });
+    }
+    else {
+      this.setState({
+        username: 'please enter your name*',
       });
     }
     
@@ -34,7 +37,7 @@ class LoginControl extends React.Component {
 
   handleInputChange = (event) => {
     this.setState({
-      username: event.target.value,
+      username:event.target.value,
     });
   }
 
@@ -58,9 +61,9 @@ class LoginControl extends React.Component {
               <Question {...this.state}/>
           </div>
           <div className='score_card m_top_80'>
-              <h3>Top five Gamer</h3>
+              <h3 className='text_center'>Top five Gamer</h3>
             { this.state.persons.map(person => 
-              <div className='user_score'>
+              <div className='user_score f_20'>
                 <div className='username'>GAMER {person.user_name}</div>
                 <div className='wrong'>MISTAKE = {person.wrong}</div>
                 <div className='date'>DATE = {person.Today}</div>
@@ -72,17 +75,20 @@ class LoginControl extends React.Component {
   </div>
     } else {
       button = 
-          <form className='center' onSubmit={this.mySubmitHandler}>
-          <h1>Hello {this.state.username}</h1>
+
+          <form className='center m_top_80 text_center f_20 form' onSubmit={this.mySubmitHandler}>
+            <span className='heading f_26' >Special  Quiz</span>  
+          <h1>Welcome {this.state.username}</h1>
           <p>Enter your name:</p>
-          <input type='text' onChange={this.handleInputChange} />
-            <button type='submit'>submit</button>
+          <input className='name_input' type='text' onChange={this.handleInputChange} />
+            <button className='submit' type='submit'>submit</button>
+            <p>This fun quiz Game for children to learn animals name</p>
           </form>
-        
+
     }
 
     return (
-      <div>
+      <div >
         {button}
       </div>
     );
