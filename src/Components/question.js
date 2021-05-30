@@ -65,6 +65,11 @@ class Question extends React.Component {
     }
     reStart = ()=>{
         this.handleSubmit()
+        this.setState({
+            hide : true,
+            count: 1,
+            message:''
+        })
     }
     handleSubmit = (e) => {
         const url = 'https://aadil-quiz.glitch.me/name';
