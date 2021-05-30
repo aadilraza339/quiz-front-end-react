@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import Userinput from './Components/user_input';
+// import Userinput from './Components/user_input';
+import Userinput from './Components/user_name';
+
 class Quiz extends Component {
   render(){
     return (
