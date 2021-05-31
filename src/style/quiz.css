@@ -61,15 +61,18 @@ body {
     color: orange;
 }
 
-.flex {
+.flex,.two_btn {
     justify-content: space-evenly;
     display: flex;
 }
+.score_card {
+    margin-bottom: 50px;
+}
 .user_score {
-
     border: 2px solid orange;
     color: black;
     margin-top: 5px;
+    padding: 10px 13px 0 30px;
 }
 .user_score div {
     padding: 5px;
@@ -81,6 +84,7 @@ body {
     }
     .btn{
         width: 90px;
+        font-size: 18px;
     }
   }
 

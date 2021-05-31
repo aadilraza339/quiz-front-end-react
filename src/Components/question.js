@@ -8,7 +8,8 @@ class Question extends React.Component {
             count : 1,
             wrong:0,
             user_name : '',
-            hide: true
+            hide: true,
+            one_time_condition:false
         }
     }
       onOption(questionDeatil, option) {
@@ -21,8 +22,7 @@ class Question extends React.Component {
                     });
                 }
                 else {
-                    let one_time_condition = false;
-                    if(one_time_condition) {
+                    if(this.state.one_time_condition) {
                         this.setState({
                             message:   ("Wrong answer , choose correct option!"),
                             wrong: this.state.wrong+=1,
@@ -31,7 +31,9 @@ class Question extends React.Component {
                     else {
                         this.setState({
                             wrong:1,
-                            message:   ("Wrong answer , choose correct option!")
+                            message:   ("Wrong answer , choose correct option!"),
+                            one_time_condition : true
+
                         })
                     }
                     
@@ -43,7 +45,7 @@ class Question extends React.Component {
                 <h4 className='f_26'> hello  {this.props.username} </h4>
                 <p className='f_26'>you have made {this.state.wrong}<span className='red'> mistake </span></p>
                 <span>Do you want to play continue?</span>
-                <ul className='flex'>
+                <ul className='two_btn'>
                     <li className="btn" onClick={this.playAgain}><span>Yes</span></li>
                     <li className="btn" onClick={this.reStart}><span>End Game</span></li>
                 </ul>
@@ -64,11 +66,13 @@ class Question extends React.Component {
         })
     }
     reStart = ()=>{
+        window.location.reload();
         this.handleSubmit()
         this.setState({
             hide : true,
             count: 1,
-            message:''
+            message:'',
+            
         })
     }
     handleSubmit = (e) => {

@@ -1,5 +1,4 @@
 import React from 'react';
-// import '../style/quiz.css'
 import Question_data from '../assets/data';
 import Axios from 'axios'
 import Question from './question'
@@ -18,7 +17,6 @@ class Login extends React.Component {
       Axios.get(`https://aadil-quiz.glitch.me/get`)
         .then(res => {
           const persons = res.data;
-          console.log(persons,'ss');
           this.setState({ persons });
         })
     }

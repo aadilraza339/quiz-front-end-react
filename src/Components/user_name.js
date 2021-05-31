@@ -3,6 +3,7 @@ import Question from './question';
 import Question_data from '../assets/data';
 import Axios from 'axios'
 import '../style/quiz.css'
+const moment = require('moment')
 function shuffle(array) {
   return array.sort(() => Math.random() - 0.5);
 }
@@ -66,7 +67,7 @@ class LoginControl extends React.Component {
               <div className='user_score f_20'>
                 <div className='username'>GAMER {person.user_name}</div>
                 <div className='wrong'>MISTAKE = {person.wrong}</div>
-                <div className='date'>DATE = {person.Today}</div>
+                <div className='date'>DATE = {moment(person.Today).format('YYYY-MM-DD HH:MM:SS')}</div>
               </div>
             )}
           </div>
