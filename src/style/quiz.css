@@ -68,6 +68,9 @@ body {
 .score_card {
     margin-bottom: 50px;
 }
+.score_card h3 {
+    padding-top: 10px;
+}
 .user_score {
     border: 2px solid orange;
     color: black;

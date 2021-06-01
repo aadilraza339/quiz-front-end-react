@@ -49,8 +49,17 @@ class LoginControl extends React.Component {
         this.setState({ persons });
       })
   }
-
   render() {
+    let top_score = <div className='score_card m_top_80'>
+    <h3 className='text_center'>Top five Gamer</h3>
+  { this.state.persons.map(person => 
+    <div className='user_score f_20'>
+      <div className='username'>GAMER {person.user_name}</div>
+      <div className='wrong'>MISTAKE = {person.wrong}</div>
+      <div className='date'>DATE = {moment(person.Today).format('YYYY-MM-DD')}</div>
+    </div>
+  )}
+  </div>
     const isLoggedIn = this.state.isLoggedIn;
     let button;
     if (isLoggedIn) {
@@ -61,22 +70,13 @@ class LoginControl extends React.Component {
               <span className='heading f_26' >Special  Quiz</span>
               <Question {...this.state}/>
           </div>
-          <div className='score_card m_top_80'>
-              <h3 className='text_center'>Top five Gamer</h3>
-            { this.state.persons.map(person => 
-              <div className='user_score f_20'>
-                <div className='username'>GAMER {person.user_name}</div>
-                <div className='wrong'>MISTAKE = {person.wrong}</div>
-                <div className='date'>DATE = {moment(person.Today).format('YYYY-MM-DD')}</div>
-              </div>
-            )}
-          </div>
+          {top_score}
         </div>
       </div>
   </div>
     } else {
       button = 
-
+      <div>
           <form className='center m_top_80 text_center f_20 form' onSubmit={this.mySubmitHandler}>
             <span className='heading f_26' >Special  Quiz</span>  
           <h1>Welcome {this.state.username}</h1>
@@ -84,7 +84,11 @@ class LoginControl extends React.Component {
           <input className='name_input' type='text' onChange={this.handleInputChange} />
             <button className='submit' type='submit'>submit</button>
             <p>This fun quiz Game for children to learn animals name</p>
+            {top_score}
+
           </form>
+  
+          </div>
 
     }
 
