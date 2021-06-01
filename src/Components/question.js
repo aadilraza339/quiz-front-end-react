@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios'
 
 class Question extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -9,11 +10,12 @@ class Question extends React.Component {
             wrong:0,
             user_name : '',
             hide: true,
-            one_time_condition:false
+            one_time_condition:false,
+            end:5
         }
     }
       onOption(questionDeatil, option) {
-            if (this.state.count < 5) {
+            if (this.state.count < this.state.end) {
                 if(questionDeatil.correctAnswer === option) {
                     this.setState({ 
                         count: this.state.count + 1,
@@ -52,7 +54,8 @@ class Question extends React.Component {
                 </div>
                 this.setState({
                     message:endmessage,
-                    hide : false
+                    hide : false,
+                    end: this.state.end+=5
                 })
                
             }
@@ -62,18 +65,11 @@ class Question extends React.Component {
         this.setState({
             hide : true,
             count: this.state.count+1,
-            message:''
+            message:'', 
         })
     }
-    reStart = ()=>{
-        window.location.reload();
-        this.handleSubmit()
-        this.setState({
-            hide : true,
-            count: 1,
-            message:'',
-            
-        })
+    reStart = async()=>{
+        await this.handleSubmit()
     }
     handleSubmit = (e) => {
         const url = 'https://aadil-quiz.glitch.me/name';
@@ -82,6 +78,7 @@ class Question extends React.Component {
             wrong: this.state.wrong,
         }   
         Axios.post(url, newUser).then((res) => {
+            window.location.reload();
 
             //handle your login 
             console.log(res);
@@ -116,3 +113,5 @@ class Question extends React.Component {
     }
 }
 export default Question;
+
+

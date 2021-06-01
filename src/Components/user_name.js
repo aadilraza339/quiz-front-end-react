@@ -67,7 +67,7 @@ class LoginControl extends React.Component {
               <div className='user_score f_20'>
                 <div className='username'>GAMER {person.user_name}</div>
                 <div className='wrong'>MISTAKE = {person.wrong}</div>
-                <div className='date'>DATE = {moment(person.Today).format('YYYY-MM-DD HH:MM:SS')}</div>
+                <div className='date'>DATE = {moment(person.Today).format('YYYY-MM-DD')}</div>
               </div>
             )}
           </div>
