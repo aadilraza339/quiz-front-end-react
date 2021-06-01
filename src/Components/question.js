@@ -14,7 +14,7 @@ class Question extends React.Component {
             end:5
         }
     }
-      onOption(questionDeatil, option) {
+    async  onOption(questionDeatil, option) {
             if (this.state.count < this.state.end) {
                 if(questionDeatil.correctAnswer === option) {
                     this.setState({ 
@@ -42,34 +42,33 @@ class Question extends React.Component {
                 }
             }
             else {
+                await this.handleSubmit()
                 let endmessage = 
                 <div className='text_center'>
                 <h4 className='f_26'> hello  {this.props.username} </h4>
                 <p className='f_26'>you have made {this.state.wrong}<span className='red'> mistake </span></p>
                 <span>Do you want to play continue?</span>
                 <ul className='two_btn'>
-                    <li className="btn" onClick={this.playAgain}><span>Yes</span></li>
-                    <li className="btn" onClick={this.reStart}><span>End Game</span></li>
+                    <li className="btn" onClick={this.reStart}><span>play again</span></li>
                 </ul>
                 </div>
                 this.setState({
                     message:endmessage,
                     hide : false,
-                    end: this.state.end+=5
                 })
                
             }
         
     }
-    playAgain = ()=>{
-        this.setState({
-            hide : true,
-            count: this.state.count+1,
-            message:'', 
-        })
-    }
+
     reStart = async()=>{
-        await this.handleSubmit()
+        this.setState({
+            message:'',
+            count: this.state.count + 1,
+            wrong:0,
+            hide : true,
+            end:this.state.end+=5
+        })
     }
     handleSubmit = (e) => {
         const url = 'https://aadil-quiz.glitch.me/name';
@@ -78,8 +77,6 @@ class Question extends React.Component {
             wrong: this.state.wrong,
         }   
         Axios.post(url, newUser).then((res) => {
-            window.location.reload();
-
             //handle your login 
             console.log(res);
 
