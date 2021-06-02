@@ -38,7 +38,6 @@ class Question extends React.Component {
 
                         })
                     }
-                    
                 }
             }
             else {
@@ -55,10 +54,8 @@ class Question extends React.Component {
                 this.setState({
                     message:endmessage,
                     hide : false,
-                })
-               
+                })  
             }
-        
     }
 
     reStart = async()=>{
@@ -70,6 +67,7 @@ class Question extends React.Component {
             end:this.state.end+=5
         })
     }
+
     handleSubmit = (e) => {
         const url = 'https://aadil-quiz.glitch.me/name';
         const newUser = {
@@ -84,9 +82,7 @@ class Question extends React.Component {
 
             //handle your errors
         });
-
     }
-   
     
     render(){
         return (

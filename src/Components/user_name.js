@@ -50,20 +50,20 @@ class LoginControl extends React.Component {
       })
   }
   render() {
-    let top_score = <div className='score_card m_top_80'>
-    <h3 className='text_center'>Top five Gamer</h3>
-  { this.state.persons.map(person => 
-    <div className='user_score f_20'>
-      <div className='username'>GAMER {person.user_name}</div>
-      <div className='wrong'>MISTAKE = {person.wrong}</div>
-      <div className='date'>DATE = {moment(person.Today).format('YYYY-MM-DD')}</div>
-    </div>
-  )}
-  </div>
+          let top_score = <div className='score_card m_top_80'>
+          <h3 className='text_center'>Top five Gamer</h3>
+          { this.state.persons.map(person => 
+            <div className='user_score f_20'>
+              <div className='username'>GAMER {person.user_name}</div>
+              <div className='wrong'>MISTAKE = {person.wrong}</div>
+              <div className='date'>DATE = {moment(person.Today).format('YYYY-MM-DD')}</div>
+            </div>
+         )}
+         </div>
     const isLoggedIn = this.state.isLoggedIn;
-    let button;
+    let new_comp;
     if (isLoggedIn) {
-      button = <div>
+      new_comp = <div>
       <div className='container' >
         <div className='flex'>
           <div className='text_center m_top_80'>
@@ -75,26 +75,22 @@ class LoginControl extends React.Component {
       </div>
   </div>
     } else {
-      button = 
+      new_comp = 
       <div>
           <form className='center m_top_80 text_center f_20 form' onSubmit={this.mySubmitHandler}>
             <span className='heading f_26' >Special  Quiz</span>  
-          <h1>Welcome {this.state.username}</h1>
-          <p>Enter your name:</p>
-          <input className='name_input' type='text' onChange={this.handleInputChange} />
-            <button className='submit' type='submit'>submit</button>
-            <p>This fun quiz Game for children to learn animals name</p>
-            {top_score}
-
+            <h1>Welcome {this.state.username}</h1>
+            <p>Enter your name:</p>
+            <input className='name_input' type='text' onChange={this.handleInputChange} />
+              <button className='submit' type='submit'>submit</button>
+              <p>This fun quiz Game for children to learn animals name</p>
+              {top_score}
           </form>
-  
           </div>
-
     }
-
     return (
       <div >
-        {button}
+        {new_comp}
       </div>
     );
   }
