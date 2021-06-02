@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/quiz-front-end-react/static/css/main.0082449d.chunk.css",
-    "main.js": "/quiz-front-end-react/static/js/main.a4ddbbf6.chunk.js",
-    "main.js.map": "/quiz-front-end-react/static/js/main.a4ddbbf6.chunk.js.map",
-    "runtime-main.js": "/quiz-front-end-react/static/js/runtime-main.81085d79.js",
-    "runtime-main.js.map": "/quiz-front-end-react/static/js/runtime-main.81085d79.js.map",
-    "static/js/2.38a3419c.chunk.js": "/quiz-front-end-react/static/js/2.38a3419c.chunk.js",
-    "static/js/2.38a3419c.chunk.js.map": "/quiz-front-end-react/static/js/2.38a3419c.chunk.js.map",
-    "static/js/3.7fe91e3b.chunk.js": "/quiz-front-end-react/static/js/3.7fe91e3b.chunk.js",
-    "static/js/3.7fe91e3b.chunk.js.map": "/quiz-front-end-react/static/js/3.7fe91e3b.chunk.js.map",
+    "main.css": "/quiz-front-end-react/static/css/main.bcfc8588.chunk.css",
+    "main.js": "/quiz-front-end-react/static/js/main.3aca0e37.chunk.js",
+    "main.js.map": "/quiz-front-end-react/static/js/main.3aca0e37.chunk.js.map",
+    "runtime-main.js": "/quiz-front-end-react/static/js/runtime-main.06a66aa8.js",
+    "runtime-main.js.map": "/quiz-front-end-react/static/js/runtime-main.06a66aa8.js.map",
+    "static/js/2.84a98835.chunk.js": "/quiz-front-end-react/static/js/2.84a98835.chunk.js",
+    "static/js/2.84a98835.chunk.js.map": "/quiz-front-end-react/static/js/2.84a98835.chunk.js.map",
+    "static/js/3.c6dbebd2.chunk.js": "/quiz-front-end-react/static/js/3.c6dbebd2.chunk.js",
+    "static/js/3.c6dbebd2.chunk.js.map": "/quiz-front-end-react/static/js/3.c6dbebd2.chunk.js.map",
     "index.html": "/quiz-front-end-react/index.html",
-    "static/css/main.0082449d.chunk.css.map": "/quiz-front-end-react/static/css/main.0082449d.chunk.css.map",
-    "static/js/2.38a3419c.chunk.js.LICENSE.txt": "/quiz-front-end-react/static/js/2.38a3419c.chunk.js.LICENSE.txt"
+    "static/css/main.bcfc8588.chunk.css.map": "/quiz-front-end-react/static/css/main.bcfc8588.chunk.css.map",
+    "static/js/2.84a98835.chunk.js.LICENSE.txt": "/quiz-front-end-react/static/js/2.84a98835.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.81085d79.js",
-    "static/js/2.38a3419c.chunk.js",
-    "static/css/main.0082449d.chunk.css",
-    "static/js/main.a4ddbbf6.chunk.js"
+    "static/js/runtime-main.06a66aa8.js",
+    "static/js/2.84a98835.chunk.js",
+    "static/css/main.bcfc8588.chunk.css",
+    "static/js/main.3aca0e37.chunk.js"
   ]
 }
